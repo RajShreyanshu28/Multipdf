@@ -1,58 +1,59 @@
-# MultiPDF Chat App
+# Multi-PDF Chatbot using LLMs
 
-> You can find the tutorial for this project on [YouTube](https://youtu.be/dXxQ0LR-3Hg).
+## 📌 Project Overview
+This project is a **Multi-PDF Chatbot** that allows users to upload multiple PDFs and interact with them using an **LLM (Mistral-7B-Instruct)** without requiring an API key. The chatbot utilizes **LangChain, FAISS vector search, and Sentence Transformers** to generate meaningful responses from uploaded documents.
 
-## Introduction
-------------
-The MultiPDF Chat App is a Python application that allows you to chat with multiple PDF documents. You can ask questions about the PDFs using natural language, and the application will provide relevant responses based on the content of the documents. This app utilizes a language model to generate accurate answers to your queries. Please note that the app will only respond to questions related to the loaded PDFs.
+## 🚀 Features
+- 📂 **Upload Multiple PDFs**: Supports multiple document inputs.
+- 🧠 **Offline LLM**: Uses **Mistral-7B-Instruct-GGUF** (No API key required).
+- 🔍 **FAISS Vector Search**: Efficiently searches document content.
+- 📝 **Conversational Memory**: Keeps track of chat history.
+- 🎛️ **Streamlit UI**: Simple and interactive web-based interface.
 
-## How It Works
-------------
+## 🛠️ Tech Stack
+- **Python** 🐍
+- **Streamlit** (UI Framework)
+- **LangChain** (Conversational AI Framework)
+- **FAISS** (Vector Search)
+- **CTransformers** (Offline LLM Model Loader)
+- **Sentence-Transformers** (Embedding Model)
 
-![MultiPDF Chat App Diagram](./docs/PDF-LangChain.jpg)
-
-The application follows these steps to provide responses to your questions:
-
-1. PDF Loading: The app reads multiple PDF documents and extracts their text content.
-
-2. Text Chunking: The extracted text is divided into smaller chunks that can be processed effectively.
-
-3. Language Model: The application utilizes a language model to generate vector representations (embeddings) of the text chunks.
-
-4. Similarity Matching: When you ask a question, the app compares it with the text chunks and identifies the most semantically similar ones.
-
-5. Response Generation: The selected chunks are passed to the language model, which generates a response based on the relevant content of the PDFs.
-
-## Dependencies and Installation
-----------------------------
-To install the MultiPDF Chat App, please follow these steps:
-
-1. Clone the repository to your local machine.
-
-2. Install the required dependencies by running the following command:
+## 🏗️ Installation
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/RajShreyanshu28/Multipdf.git
+   cd Multi-PDF-Chatbot
    ```
+2. **Create a Virtual Environment (Optional but Recommended)**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+3. **Install Dependencies**
+   ```bash
    pip install -r requirements.txt
    ```
+4. **Download & Set Up Mistral-7B-GGUF Model**
+   ```bash
+   mkdir models
+   cd models
+   wget https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GGUF/resolve/main/mistral-7b-instruct-v0.1.Q4_K_M.gguf
+   ```
 
-3. Obtain an API key from OpenAI and add it to the `.env` file in the project directory.
-```commandline
-OPENAI_API_KEY=your_secrit_api_key
+## ▶️ Running the Application
+```bash
+streamlit run app.py
 ```
+Then open your browser and navigate to **http://localhost:8501**.
 
-## Usage
------
-To use the MultiPDF Chat App, follow these steps:
+## 🏆 Results
+- Successfully processes multiple PDFs.
+- Uses **Mistral-7B for answering queries** efficiently.
+- Achieves **high response quality without API keys**.
 
-1. Ensure that you have installed the required dependencies and added the OpenAI API key to the `.env` file.
+## 🤝 Contributions
+Feel free to fork the repository and submit a pull request.
 
-2. Run the `main.py` file using the Streamlit CLI. Execute the following command:
-   ```
-   streamlit run app.py
-   ```
-
-3. The application will launch in your default web browser, displaying the user interface.
-
-4. Load multiple PDF documents into the app by following the provided instructions.
-
-5. Ask questions in natural language about the loaded PDFs using the chat interface.
+## 📜 Author
+Shreyanshu Raj
 
